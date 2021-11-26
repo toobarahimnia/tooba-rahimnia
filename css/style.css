@@ -14,7 +14,9 @@
     --fw-bold: 700;
     
     --clr-light: #fff;
-    --clr-dark: #d9805d;
+    --clr-dark: #8c5e4c;
+    /* #eda285 */
+    /* d9805d */
     /* f2a7b6 */
     /* f78457 */
     --clr-accent: #000000;
@@ -39,6 +41,11 @@
 
 /* General styles */
 
+/* endable this to add smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: var(--clr-light);
     color: var(--clr-dark);
@@ -46,6 +53,8 @@ body {
     font-family: var(--ff-primary);
     font-size: var(--fs-body);
     line-height: 1.6;
+    /* color: #000000; */
+
 }
 
 section {
@@ -70,7 +79,7 @@ strong { font-weight: var(--fw-bold) }
     display: inline-block;
     padding: .5em 2.5em;
     background: var(--clr-accent);
-    color: var(--clr-dark);
+    color: #d4d2d2;
     text-decoration: none;
     cursor: pointer;
     font-size: .8rem;
@@ -283,23 +292,23 @@ header {
 
 
 
-/*  My services section  */
+/*  about_me section  */
 
-.my-services {
+.my-about_me {
     background-color: var(--clr-dark);
-    background-image: url(../img/intro_pic.jpg);
+    background-image: url(../img/about_me.jpg);
     background-size: cover;
     background-blend-mode: multiply;
     color: var(--clr-accent);
     text-align: center;
 }
 
-.section__title--services {
-    color: var(--clr-accent);
+.section__title--about_me {
+    color: #d4d2d2; 
     position: relative;
 }
 
-.section__title--services::after {
+.section__title--about_me::after {
     content: '';
     display: block;
     width: 2em;
@@ -307,43 +316,45 @@ header {
     margin: 0.5em auto 1em;
     background: var(--clr-accent);
     opacity: 0.25;
-    
 }
 
-.services {
+.about_me {
     margin-bottom: 4em;
 }
 
-.service {
-    max-width: 500px;
+.about_me_me {
+    max-width: 5000px;
     margin: 0 auto;
+    text-align: left;
+    color: #d4d2d2;
 }
 
 @media (min-width: 800px) {
-    .services {
+    .about_me {
         display: flex;
         max-width: 1000px;
         margin-left: auto;
         margin-right: auto;
     }
     
-    .service + .service {
+    .about_me_me + .about_me_me {
         margin-left: 2em;
     }
 }
 
 
-.about-me {
+.my_work {
     max-width: 1000px;
     margin: 0 auto;
+    color: #424141;
 }
 
-.about-me__img {
+.my_work__img {
     box-shadow: var(--bs);
 }
 
 @media (min-width: 600px) {
-    .about-me {
+    .my_work {
         display: grid;
         grid-template-columns: 1fr 200px;
         grid-template-areas: 
@@ -353,11 +364,11 @@ header {
         grid-column-gap: 2em;
     }
     
-    .section__title--about {
+    .section__title--my_working {
         grid-area: title;
     }
     
-    .section__subtitle--about {
+    .section1__subtitle--my_working {
         grid-column: 1 / -1;
         grid-row: 2;
         position: relative;
@@ -365,21 +376,43 @@ header {
         width: calc(100% + 2em);
         padding-left: 1em;
         padding-right: calc(200px + 4em);
+        color: #424141;
     }
     
-    .about-me__img {
+    .section2__subtitle--my_working {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        position: relative;
+        left: -1em;
+        width: calc(100% + 2em);
+        padding-left: 1em;
+        padding-right: calc(200px + 4em);
+        color: #424141;
+    }
+    .section3__subtitle--my_working {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        position: relative;
+        left: -1em;
+        width: calc(100% + 2em);
+        padding-left: 1em;
+        padding-right: calc(200px + 4em);
+        color: #424141;
+    }
+    
+    .my_work__img {
         grid-area: img;
         position: relative;
         z-index: 2;
     }
 }
 
-/* My Work */
+/* My projects */
 
-.my-work {
+.my-projects {
     background-color: var(--clr-dark);
     color: var(--clr-light);
-    text-align: center;    
+    text-align: center;
 }
 
 .portfolio {
@@ -464,10 +497,24 @@ header {
     padding: 0 2em 2em;
     max-width: 1000px;
     margin: 0 auto;
+    color: #424141;
 }
 
 .portfolio-item-individual p {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }

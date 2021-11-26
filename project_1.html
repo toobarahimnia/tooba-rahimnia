@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DevJane Portfolio Website</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />  
+        
+        <!-- Update these with your own fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Roboto+Slab:400,700&display=swap" rel="stylesheet"> 
+        
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+    <body>
+        <header>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="index.html#about_me" class="nav__link">About me</a></li>
+                    <li class="nav__item"><a href="index.html#my_working" class="nav__link">Work experience</a></li>
+                    <li class="nav__item"><a href="index.html#projects" class="nav__link">Projects</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+
+        <section class="intro">
+            <h1 class="section__title section__title--intro">
+                <strong>Daily Dash</strong>Chrome Extension
+            </h1>
+            <p class="section__subtitle section__subtitle--intro">Summer Project</p>
+            <img src="img/project_harvard.png" alt="" class="intro__img">
+        </section>
+        
+        <div class="portfolio-item-individual">
+            <p>This chrome extension is the final project for the summer 2020 CS50x Harvard class. As the entire world was on lockdown and faced with difficulty, I have decided to create a software that can both entertain the population stayed at home and raise awareness regarding the COVID-19 virus.</p>
+            <p> Below demonstrates an overal picture of the structure of the extension: 
+            <div class="row">
+                <div class="column">
+                    <img src="img/project_1.jpg" alt="Snow" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="img/project_2.jpg" alt="Forest" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="img/project_5.jpg" alt="Forest" style="width:100%">
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <img src="img/project_3.jpg" alt="Forest" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="img/project_4.jpg" alt="Forest" style="width:100%">
+                </div> 
+            </div>       
+        </div>
+        
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <!-- replace with your own email address -->
+            <a href="img/Resume.pdf" target="_blank" class="footer__link">Curriculum Vitae</a>
+            <ul class="social-list">
+                <li class="social-list__item">
+                    <a href="trahimnia@gmail.com">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://www.linkedin.com/in/tooba-rahimnia/" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://github.com/toobarahimnia" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+            </ul>
+            <p>Created by Tooba Rahimnia © 2021</p>
+        </footer>
+        
+        
+        <script src="js/index.js"></script>
+        
+    </body>
+</html>
