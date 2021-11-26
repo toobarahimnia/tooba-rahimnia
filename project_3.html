@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DevJane Portfolio Website</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />  
+        
+        <!-- Update these with your own fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Roboto+Slab:400,700&display=swap" rel="stylesheet"> 
+        
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+    <body>
+        <header>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="index.html#about_me" class="nav__link">About me</a></li>
+                    <li class="nav__item"><a href="index.html#my_working" class="nav__link">Work experience</a></li>
+                    <li class="nav__item"><a href="index.html#projects" class="nav__link">Projects</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+
+        <section class="intro">
+            <h1 class="section__title section__title--intro">
+                <strong>Pothole Detection</strong>Hackathon
+            </h1>
+            <p class="section__subtitle section__subtitle--intro">Winter McHacks V (1st place)</p>
+            <img src="img/pothole.jpg" alt="" class="intro__img">
+        </section>
+        
+        <div class="portfolio-item-individual">
+            <div class="row">
+                <div class="column">
+                    <img src="img/hack1.JPG" alt="Snow" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="img/hack2.JPG" alt="Forest" style="width:100%">
+                </div>
+            </div>
+            <p><strong>Motivation:</strong></p>
+            <p>Evidence shows that there could be up to 50,000 potholes in need of repair on the island of the city of Montreal. The perpetual repairs cost the city an estimated $2.5 million annually. For the past five years, Montreal has invested half a billion dollars to maintain its road network and address the city’s estimated 60,000 to 90,000 potholes.</p>
+            
+            <p><strong>Our solution:</strong></p>
+            <p>With our focus purely on solving the problem caused by potholes in cities like Montreal, our insights looked to uncover things that could be under the control of the government. If an interesting insight could be uncovered but not be remedied by the government, we considered it irrelevant, as no change can be brought forth. This is important because we do not want to find insights just for the sake of finding one. We want every insight to be translated into actions the government can take to improve the quality of life for the people and move forward to the full adoption of a smart city. Our one beneficial solution is mainly based on publishing longitude, latitude, timestamp and severity of pothole using signals received by Particle Electron Board. This Data received can simulate the actual problem drivers are facing with every day on the street.</p>
+            <p>Our mission is to optimize route transportation to save money invested on road constructions, easing road transportation and securing people’s lives.</p>
+            <p><strong>Collaborators:</strong></p>
+            <p>Jingyi He (McGill University)<br>Tooba Rahimnia (McGill University)<br>Kevin Jiang (Waterloo University) </p>
+            <p><strong>Award:</strong></p>
+            <p> First Place McHacks 2018 (<a href="https://devpost.com/software/shutyourpothole" target="_blank">Winner Telus</a>)</p>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <a class="footer__link" href="https://drive.google.com/file/d/1iTq45jmv4arTfgiiFCktuzWh-b7ZC96u/view?usp=sharing" target="_blank" >Curriculum Vitae</a>
+            <ul class="social-list">
+               
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://www.linkedin.com/in/tooba-rahimnia/" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://github.com/toobarahimnia" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+            </ul>
+            <p>Created by Tooba Rahimnia © 2021</p>
+        </footer>
+        
+        
+        <script src="js/index.js"></script>
+        
+    </body>
+</html>
