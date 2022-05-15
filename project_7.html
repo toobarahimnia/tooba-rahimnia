@@ -52,27 +52,25 @@
             </div> -->
         
             <p><strong>Introduction:</strong></p>
-            <p>For this assignment we were tasked with creating weather forecasting deep models applied to the weather  time series dataset. These models took on three flavours: a model creating using only dense layers, a model involving LSTM layers, and finally, a custom model for which we chose to implement a transformer model. The first two models served to provide baselines for performance, whereas the final model was created in an attempt to outperform these baselines.  Each of the models received inputs in the form a history of weather attributes (discussed in section 2.1) from time t − k to t − 1 and output the following values for a time t:</p>
+            <p>As part of the deep learning course deliverables we were tasked with creating weather forecasting deep models applied to the weather time series dataset. Given that, I worked on creating a model involving LSTM layers. The Long short-term memory (LSTM) model received inputs in the form a history of weather attributes from time t − k to t − 1 and output the following values for a time t:</p>
+            
             <p><strong>p (mbar)</strong>  Atmospheric pressure<br><strong>T (degC)</strong>  Air temperature<strong><br>rh (%)</strong>  Relative humidity<br><strong>wv (m/s)</strong>   Wind velocity</p>
-            <p>For the purposes of our experiments, we chose k = 7, as we believed that providing the models with a longer time series would likely lead to better inference by each model, however, wanted to balance this goal with reasonable training times, motivating us to have k be less than it’s maximum allowed value of 8. Additionally, each model consisted of exactly three deep learning layers to ensure fairness of comparison across models.</p>
+            
+            <p>For the purposes of the experiment, k is 7 aiming to provide the model with a longer time series and get better inference.</p>
            
-            <!-- <p><ul style="float: right; margin-right: 100px;>
-                </ul></p> -->
             <p><strong>Methodology</strong></p>
             
-            <p>The provided dataset contained not only the required output features (atmospheric pressure, air temperature, relative humidity, wind velocity) but also numerous others including date, time, and H2O content. For our experiments, we chose to provide the models with only the four required features assess their performance while receiving only a limited feature set and to simplify calculations of error propagation (discussed in section 4.1). However, as will be later discussed in section 4.2, we chose to assess the models’ respective abilities to cast predictions on additional features, while still only having the four required features as inputs.</p>
+            <p>The provided dataset contained not only the required output features (atmospheric pressure, air temperature, relative humidity, wind velocity) but also numerous others including date, time, and H2O content. For the purpose of this experiment, I include only the four similar features as output and assess model performance accordingly.</p>
             
-            <p>The preprocessing performed was minimal and targeted. After loading the training and test datasets, we normalized both column-wise so each feature was between 0 and 1. This transformation was also applied to the output features so that when it came time to calculate the model’s loss, each feature output was normalized in [0, 1] resulting in equally weighted loss across output values. However, to ensure that practical outputs could be obtained such that each was represented in appropriate units, the scaler used to normalize both inputs and labels was saved so as a reverse transformation could be applied to output values, returning them to their desired units.</p>
+            <p>After loading the training and test datasets, they were normalized both column-wise so each feature was between 0 and 1. This transformation was also applied to the output features so that when it came time to calculate the model’s loss, each feature output was normalized in [0, 1] resulting in equally weighted loss across output values.</p>
             
-            <p>It should also be noted that when month and time of day were considered for input feature candidates, a different form of preprocessing was required to address their cyclical natures. Instead of simply normalizing these features with a scaler as above, we first input them to sine and cosine functions such that each represented a smooth sinusoid, whose outputs were in turn normalized on [0, 1] and added to the feature set. The specific preprocessing details for each model are summarized in the following subsections.</p>
-            
-            <p>LSTM: First, we perform median and gaussian filters on both training and testing datasets. Selected inputs are fed into the model, one by one, for each round of training, therefore, at this step we drop all feature columns that are not desired. Data is normalized from 0 to 1 using MinMaxScaler function and splitted into inputs and labels according to the timestamps declared earlier in the model (k=7).</p>
+            <p>Next, I performed median and gaussian filters on both training and testing datasets. Selected inputs are fed into the model, one by one, for each round of training, therefore, at this step I drop all feature columns that are not desired. Data is normalized from 0 to 1 using MinMaxScaler function.</p>
             
             <p><strong> Model Architecture</strong></p>
+            <p>Using Keras I construct the model with 3 layers of which two of them are long short-term memory (LSTM) and one Dense layer. Both of the LSTM layers consist of a ’relu’ activation function to overcome the vanishing gradient. In addition to this settings, the first LSTM layer returns the hidden state output for each input time step using return sequences. Therefore, the second LSTM layer returns a 3-D sized Tensor with 50 memory units (smart neurons). I used a Dense output layer with a single neuron, as the final step, to return a 3-D prediction.</p>
             
-            <p>Using Keras we construct our model with 3 layers of which two of them are long short-term memory (LSTM) and one Dense layer. Both of the LSTM layers consist of a ’relu’ activation function to overcome the vanishing gradient. In addition to this settings, the first LSTM layer returns the hidden state output for each input time step using return sequences. Therefore, our second LSTM layer returns a 3-D sized Tensor with 50 memory units (smart neurons). We use a Dense output layer with a single neuron, as the final step, to return a 3-D prediction.</p>
+            <p>I elected to use mean squared error (MSE) as the loss function. Additionally, since the model outputs were normalized on [0, 1], the mean squared error was calculated as an unbiased mean across all output features and no loss customization was required to ensure that the importance of each output was weighted evenly.</p>
             
-            <p>Loss Function: For all three models, we elected to use mean squared error (MSE) as our loss function. This was selected as it is a very popular candidate for regression task loss functions [2]. Additionally, since all model outputs were normalized on [0, 1] as mentioned in section 2.2, the mean squared error was calculated as an unbiased mean across all output features and no loss customization was required to ensure that the importance of each output was weighted evenly.</p>
             <p>The LSTM model was trained under the following conditions:</p>
             <p><ul style="float: right; margin-right: 100px;">
                 <li>Training samples: 56065</li>
@@ -82,18 +80,59 @@
                 <li>Learning rate: Initial rate of 0.001 with linear decay and 500 warmup steps</li>
                 </ul>
             </p> 
-            <p>To make sure that the model learns several patterns based on the historical data provided, we use all the training samples with batches of 32 and 30 numbers of epochs. The numbers chosen are enough to train the model without overfitting. Similar to the rest of the models, we use mean squared error to obtain the loss in the network’s output.</p> 
+            
+            <p>To make sure that the model learns several patterns based on the historical data provided, I use all the training samples with batches of 32 and 30 numbers of epochs. The numbers chosen are enough to train the model without overfitting.</p> 
+                       
             <p><strong>Results</strong></p>
-            <p>Matrics comparison: To compare model performances, we chose to use the mean squared error across the entire test set, both peroutput and overall. We believe this to be a robust measure of performance as it allows for an understanding of the degree of prediction inaccuracy for each model as well as the distribution of these inaccuracies across outputs.</p>     
-            <p>table for MSE and graphs</p>
+            <p>To observe model performance, I chose to use the mean squared error across the entire test set, both peroutput and overall. This to be a robust measure of performance as it allows for an understanding of the degree of prediction inaccuracy for the model as well as the distribution of these inaccuracies across outputs.</p>   
+            
+            <figure>
+                <p><img align = "center" src="img/table.png" alt="" style="width:650px;height:300px;"></p>
+             
+            </figure>
+            
+            
+            <figure>
+                <p>
+                    <div class="row">
+                        <div class="column">
+                            <img style="float: left; margin-left: 100px;" src="img/pressure_72.png" alt="" style="width:500px;height:250px;">
+                        </div>
+                        <div class="column">
+                            <img style="float: left; margin-left: 150px;" src="img/temperature_72.png" alt="" style="width:500px;height:250px;">
+                        </div>
+                    </div>
+                </p>
+                <p>
+                    <div class="row">
+                        <div class="column">
+                            <img style="float: left; margin-left: 100px;" src="img/humidity_72.png" alt="" style="width:450px;height:200px;">
+                        </div>
+                        <div class="column">
+                            <img style="float: left; margin-left: 150px;" src="img/velocity_72.png" alt="" style="width:450px;height:200px;">
+                        </div>
+                    </div>
+                </p>
+                <figcaption align = "center">LSTM prediction vs true value for all four features - first 72 hours</figcaption>
+            </figure>
+            
+            
+            
             <p><strong>Further Analysis</strong></p>
-            <p>The pressure and temperature of any gas, including air, are directly proportional according to Frenchman Joseph Gay-Lussac law (1778 to 1850) [6]. This gas law shows that, if the mass and volume of any given sample of gas are held constant, as the sample’s temperature increases, so will its pressure, and vice versa. Mathematically:</p>
-            <p>equation</p>
-            <p>where kG is the appropriate proportionality constant. The main purpose of this experiment is to verify whether this equality can be satisfied by our extracted results. We have selected the LSTM model to implement this task for us. The assumption is to have a fixed amount of air in a large area outdoors, e.g. a national park, where we can safely keep mass and volume constant.</p>
-            <p>To start, we converted the pressure and temperature units of both testing and predicted sets to atm and Kelvin, respectively. Next, we calculated the kG constant, P T ratio, for each dataset, separately. finally, we visualized the outcomes to easily compare our finding with ground truth.</p>
-            <p>As you can notice in Fig. 7, there are some spikes in true value graph that have been mostly eliminated during prediction. We believe this might have been caused by the change in atmospheric dynamic (wind blow for example) where the air mass within a certain volume is no longer fixed. However, in general, our result is perfectly synchronized with the real data. The P T ratio follows a constant value close to zero (both pressure and temperature values are normalized between 0 and 1). Our finding shows that we not only achieved a constant kG throughout the entire dataset but also its magnitude is very close to the kG of the real data with a minimal MSE of 1.08444e-05. This indicates our LSTM model is able to memorize long patterns and predict atmospheric features as close to actual data as possible.</p>
+            <p>The pressure and temperature of any gas, including air, are directly proportional according to Frenchman Joseph Gay-Lussac law (1778 to 1850). This gas law shows that, if the mass and volume of any given sample of gas are held constant, as the sample’s temperature increases, so will its pressure, and vice versa. Mathematically:</p>
+            
+            <p>T/P = KG</p>
+            
+            <p>where kG is the appropriate proportionality constant. The main purpose of this experiment is to verify whether this equality can be satisfied by my extracted results. The assumption is to have a fixed amount of air in a large area outdoors, e.g. a national park, where we can safely keep mass and volume constant.</p>
+            <p>To start, I converted the pressure and temperature units of both testing and predicted sets to atm and Kelvin, respectively. Next, calculated the kG constant, P/T ratio, for each dataset, separately. finally, visualized the outcomes to easily compare our finding with ground truth.</p>
+            <p>As you can notice in the figure below, there are some spikes in true value graph that have been mostly eliminated during prediction. This is believed to have been caused by the change in atmospheric dynamic (wind blow for example) where the air mass within a certain volume is no longer fixed. However, in general, the result is perfectly synchronized with the real data. The P/T ratio follows a constant value close to zero. These findings show that my custom-made LSTM model not only achieved a constant kG throughout the entire dataset but also its magnitude is very close to the kG of the real data with a minimal MSE of 1.08444e-05. This indicates this LSTM model is able to memorize long patterns and predict atmospheric features as close to actual data as possible.</p>
         
+            <figure>
+                <p><img align="center" src="img/GL_law.png" alt="" style="width:550px;height:300px;"></p>
+            </figure>
         
+            <p> Link to the project repo:  <a href="https://github.com/toobarahimnia/Deep-Learning/blob/main/Assignment%204/ECSE552_HW4(LSTM).ipynb" target="_blank">GitHub</a></p>
+
         </div>
         
         
