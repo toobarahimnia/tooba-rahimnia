@@ -525,9 +525,9 @@ header {
 /* sidebar */
 .sidebar {
 height: 100%;
-width: 200px;
+width: 350px;
 position: fixed;
-top: 34%;
+top: 30%;
 left: 0%;
 padding-top: 40px;
 padding-left: 40px;
