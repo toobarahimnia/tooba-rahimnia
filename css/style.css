@@ -413,7 +413,7 @@ header {
 /* My projects */
 
 .my-projects {
-/*     background-color: var(--clr-dark); */
+    /* background-color: var(--clr-dark); */
     color: var(--clr-dark);
     text-align: center;
 }
