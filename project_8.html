@@ -33,8 +33,9 @@
                 <div><a href="project_8.html#header10"><h6>Viscosity</h6></a></div>
                 <div><a href="project_8.html#header11"><h6>Free-Body Diagram</h6></a></div>
 
-            <div><a href="project_8.html#header12"><h5>Implementation</h5></a></div>
-                <div><a href="project_8.html#header13"><h6>Helmholtz-Hodge Decomposition Theorem</h6></a></div>
+            <div><a href="project_8.html#header12"><h5>Helmholtz-Hodge Theorm</h5></a></div>
+            <div><a href="project_8.html#header13"><h5>Implementation</h5></a></div>
+                
 
 
             <div><a href="project_8.html#header14"><h5>Result</h5></a></div>
@@ -210,7 +211,11 @@
                 <p>figure</p>
                 <p>formula</p>
                
-            <p><Strong><font size="5rem"><a id="header12">Implementation</a></font></strong></p>
+               
+               
+               <p><Strong><font size="5rem"><a id="header12">Helmholtz-Hodge Decomposition Theorem</a></font></strong></p>
+                
+               
                 <p>From Jos Stam's paper we find that N-S equations are perfect for fluid flow simulation. Given velocity and pressure at t=0, we need to use N-S to find their values at t > 0. N-S equations are supplemented with boundary conditions:</p>
                 <p>
                     <ul style="float: right; margin-right: 65%;">
@@ -221,13 +226,15 @@
 
                 <p>Fixed boundary condition: fluid lies in some bounded domain D. Boundary conditions are given by a function uD defined on the boundary ∂D of the domain. Condition should be such that the normal component of the velocity field is zero at the boundary,aka, no matter should traverse wall:  u . n= 0 </p>
                 
-                <p><Strong><font size="4rem"><a id="header13">Helmholtz-Hodge Decomposition Theorem</a></font></strong></p>
                 
-                <p>A vector field w on D (a region in space, in our case a plane) can be uniquely decomposed in the form:</p>
+                <p>Helmholtz-Hodge Decomposition Theorem says a vector field w on D (a region in space, in our case a plane) can be uniquely decomposed in the form:</p>
                 
                 <p>formula</p>
                 <p>Where u has zero divergence and is parallel to D (boundary of the region); that is, u . n = 0 on D.  P is a scalar field. Any vector field is the sum of a mass conserving field and a gradient field. This result allows us to define an operator P which projects any vector field w onto its divergence free part u = Pu . Multiplying both sides of the equation above by “∇”:</p>
-                <p></p>
+                <p>formulas</p>
+                
+                <p><Strong><font size="5rem"><a id="header13">Implementation</a></font></strong></p>
+
                 <p></p>
                 <p></p>
                 <p></p>
