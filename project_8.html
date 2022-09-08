@@ -34,8 +34,10 @@
                         <div><a href="project_8.html#header11"><h6>Free-Body Diagram</h6></a></div>
 
                     <div><a href="project_8.html#header12"><h5>Implementation</h5></a></div>
+                        <div><a href="project_8.html#header13"><h6>Helmholtz-Hodge Decomposition Theorem</h6></a></div>
 
-                    <div><a href="project_8.html#header13"><h5>Result</h5></a></div>
+
+                    <div><a href="project_8.html#header14"><h5>Result</h5></a></div>
 
             </div>
             
@@ -170,10 +172,65 @@
             
             <p>formula and figure</p>
             
-            <p><Strong><font size="3rem"><a id="header11">Free-Body Diagram</a></font></strong></p>
+            <p><font size="3rem">Viscous Stress Tensor:</font></p>
             
+            <p>In three-dimensional flow, the velocity or velocity gradient changes in all three directions. Due to the viscosity, the resulting shear stress is no longer only due to the velocity gradient in a certain direction, but also to a velocity gradient perpendicular to it.</p>
+            
+            <p>This situation is similar to the deformation of a fluid element. Imagine shear forces that deform the fluid element. In this way, inclined surfaces are formed so that the shear forces acting on the surface now affect another spatial dimension. In fact, in fluids, the stresses acting in additional spatial directions are not due to an actual deformation (magnitude of shearing), but to the shear rate.</p>
+            
+            <p>This insight leads to the introduction of a so-called viscous stress tensor, which describes the stresses (normal and shear stresses) acting on a fluid element:</p>
+           
+            <p>The stress on a surface pointing in the −i direction is the negative of the stress on a surface in the +i direction, etc.</p>
+            <p>figure</p>
+            <p>Writing the reference stresses in terms of their components, we obtain:</p>
+
+            <p>formula</p>
+
+            <p>Therefore, the stress (n) acting at x, t on a surface with any arbitrary orientation  n can be expressed in terms of the nine reference stress components:</p>
+            
+            <p>formula</p>
+            
+            <p>For an isotropic incompressible Newtonian fluid with constant [dynamic] viscosity, the components of the viscous stress tensor τ can be determined from the viscosity η as follows:</p>
+            
+            <p>formula</p>
+            
+            <p>The rate of angular (or shear) strain in the fluid particle as seen by an observer sitting on it is:</p>
+            
+            <p>formula</p>
+            
+            <p>The individual entries of the viscous stress tensor can also be determined with the following formula:</p>
+            
+            <p>formula</p>
+            
+            <p>xx , yx and zx represent the x, y, and z components of the stress acting on the surface whose outward normal is oriented in the positive x-direction.</p>
+            
+            <p>Due to the viscosity η, shear forces or shear stresses in x-direction act on the lateral surfaces of the fluid element and on the top and bottom surfaces. In contrast to the normal stresses, which are directed perpendicular to the surface, the shear stresses act parallel to the surface.</p>
+            
+            <p><Strong><font size="3rem"><a id="header11">Free-Body Diagram</a></font></strong></p>
+                <p>Forces acting on the cross-sectional area of differential element of the fluid (unit: [F/m2] or Pascals):</p>
+                <p>figure</p>
+                <p>formula</p>
+               
             <p><Strong><font size="5rem"><a id="header12">Implementation</a></font></strong></p>
-            <p><Strong><font size="5rem"><a id="header13">Result</a></font></strong></p>
+                <p>From Jos Stam's paper we find that N-S equations are perfect for fluid flow simulation. Given velocity and pressure at t=0, we need to use N-S to find their values at t > 0. N-S equations are supplemented with boundary conditions:</p>
+                <p>
+                    <ul style="float: right; margin-right: 65%;">
+                    <li>Periodic</li>
+                    <li>Fixed (used!)</li>
+                    </ul>
+                </p> 
+
+                <p>Fixed boundary condition: fluid lies in some bounded domain D. Boundary conditions are given by a function uD defined on the boundary ∂D of the domain. Condition should be such that the normal component of the velocity field is zero at the boundary,aka, no matter should traverse wall:  u . n= 0 </p>
+                
+                <p><Strong><font size="4rem"><a id="header13">Helmholtz-Hodge Decomposition Theorem</a></font></strong></p>
+                
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+            <p><Strong><font size="5rem"><a id="header14">Result</a></font></strong></p>
         </div>
         
         
