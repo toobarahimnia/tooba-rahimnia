@@ -79,9 +79,9 @@
             
             <p><Strong><font size="4rem"><a id="header3">Vector Field</a></font></strong></p>
             
-            <p>The velocity vector field of fluid (v⃗) is defined such that for every position x = (x, y), there is an associated velocity at time t, U(x, t) = (u(x, t), v(x, t), w(x, t)).<p>
+            <p>The velocity vector field of fluid (v⃗) is defined such that for every position x = (x, y), there is an associated velocity at time t: <br>U(x, t) = u(x, t), v(x, t), w(x, t).<p>
 
-            <p>We can think of this as a (multivariable) vector-valued function, whose input is a point (x,y) in two-dimensional space, and the output is a two-dimensional vector.</p>
+            <p>We can think of this as a (multivariable) vector-valued function, whose input is a point (x,y), and the output is a vector with the same dimension as input.</p>
 	
             <p>The key to fluid simulation is to take steps in time and, at each time step, correctly determine the current velocity field. We will later see this done by solving a set of equations that describes the evolution of the velocity field over time, under a variety of forces.</p>
             
@@ -89,14 +89,14 @@
             
             <p>The divergence is an operator, which takes in the vector-valued function defining this vector field, and outputs a scalar-valued function measuring the change in density of the fluid at each point.</p>
             
-            <p>figure</p>
+           
+            <img src="img/formula_div1.png" alt="Snow" style="width:30%" class="center">
+           
             
-            <p>Negative divergence means a fluid flowing along the vector field defined by v⃗ would tend to become more dense at the point (x0 ,y0). Positive divergence means the fluid flowing along vector field becomes more sparse at a certain point. And finally, zero-divergence indicates that even though a fluid flows freely, its density (the degree of compactness of a substance) stays constant. </p>
+            <p>Divergence can become negative, positive or zero. Negative divergence means a fluid flowing along the vector field defined by v⃗ would tend to become more dense at the point (x0 ,y0). Positive divergence means the fluid flowing along vector field becomes more sparse at a certain point. And finally, zero-divergence indicates that even though a fluid flows freely, its density (the degree of compactness of a substance) stays constant. </p>
             
-            <p>code sim</p>
-            
-            <p></p>
-            
+            <img src="img/formula_div2.png" alt="Snow" style="width:40%" class="center">
+                        
             <p><Strong><font size="5rem"><a id="header5">Introduction</a></font></strong></p>
             
             <p>The Navier-stokes equation is derived from mass, momentum, and energy conservation because physics of fluid and heat transfer phenomena are governed by three fundamental principles, namely mass conservation (or continuity equation), momentum conservation (Newton’s second law), and energy conservation (first law of thermodynamics).</p>
