@@ -121,40 +121,48 @@
             <p>𝑓_𝑠𝑢𝑟𝑓𝑎𝑐𝑒 is expressed through pressure and viscous forces (which we will go into details soon).</p>
 
             
+            
             <p><Strong><font size="5rem"><a id="header8">Navier Stokes Equations</a></font></strong></p>
             
-            <p> First thing first, we need to derive Navier-Stokes (momentum) equation for fluids with the following characteristics:</P>
+            <p> First thing first, we need to derive Navier-Stokes (momentum) equation for fluids based off of the following assumptions:</P>
             <p>
-                <ul style="float: right; margin-right: 25%;">
+                <ul style="float: right; margin-right: 61%;">
                 <li>Newtonian Fluid</li>
-                <li>Incompressible (rate of change of mass over time is zero)</li>
+                <li>Incompressible</li>
                 <li>Isothermal</li>
                 </ul>
             </p> 
-            <p>Given a 3 dimensional space, fluids are subject to forces from all directions. Here, however, we only consider the X-components of velocity of the fluid, for simplicity. Same results can be generated for Y and Z directions.</p>
             
-            <p>Now, in order to find the acceleration of fluid in move, we use the famous formula F = ma:</p>
+            <p>Given a 3 dimensional space, fluids are subject to forces from all 3 directions. Here, we only consider the X-components of velocity of the fluid. Similar approach can be applied to get the results for Y and Z directions.</p>
             
-            <p>formula</p>
-            <p>As discussed in <a href="project_8.html#header7">conservation of momentum</a> section, there are three forces to be considered (per volume basis):</p>
+            <p>To find the acceleration of fluid in move, we use the famous formula <br>F = ma:</p>
+            <img src="img/formula_NS1.png" alt="Snow" style="width:50%" class="center">
+
+            
+            <p>As discussed in the <a href="project_8.html#header7">conservation of momentum</a> section, there are 3 forces to be considered (per volume basis):</p>
             <p>
-                <ul style="float: right; margin-right: 50%;">
-                <li>Gravity (external)</li>
-                <li>Pressure difference (internal)</li>
-                <li>Viscous (internal)</li>
+                <ul style="float: right; margin-right: 40%;">
+                <li>Gravity (𝑓_𝑏𝑜𝑑𝑦, external)</li>
+                <li>Pressure difference (𝑓_𝑠𝑢𝑟𝑓𝑎𝑐𝑒, internal)</li>
+                <li>Viscous (𝑓_𝑠𝑢𝑟𝑓𝑎𝑐𝑒, internal)</li>
                 </ul>
             </p> 
 
             <p>The force exerted by gravity is self-explanatory. Now let's move to the internal forces due to Pressure and viscosity.</p>
             
-            <p>Considering only the motion of the fluid in x-direction: The motion of the fluid element is influenced by the pressure forces acting on the front and back surface of the cubic volume element. These pressure forces basically represent normal stresses and are therefore denoted in the following by the Greek symbol σ instead of p. In addition to the pressure forces, viscosity-related forces also act perpendicular to the surfaces and contribute to normal stress.</p>
+            <!-- <p>Considering only the motion of the fluid in x-direction: The motion of the fluid element is influenced by the pressure forces acting on the front and back surface of the cubic volume element (along the x-axis), because the forces due to pressure are always exerted perpendicular to any surface. <br>These pressure forces basically represent normal stresses and are therefore denoted by the Greek symbol σ instead of p. In addition to the pressure forces, viscosity-related forces also act perpendicular to the surfaces and contribute to normal stress.</p> -->
             
             <p><Strong><font size="3rem"><a id="header9">Pressure</a></font></strong></p>
             
             <p>Fluid pressure is a measurement of the force per unit area. Fluid pressure can be caused by gravity, acceleration, or forces in a closed container. Since a fluid has no definite shape, its pressure applies in all directions. The net force due to pressure in the x-direction is given by:</p>
             
             <p>formula and figure</p>
+            <img src="img/pressure_fig.png" alt="Snow" style="width:50%" class="center">
+
+            <p>As you can see from the above figure, the pressure forces are acting on the front and back surface of the cubic volume element (along the x-axis), because the forces due to pressure are always exerted perpendicular to any surface (and we are only considering the x-axis here).</p>
             
+            <p>These pressure forces basically represent normal stresses and are therefore denoted by the Greek symbol σ instead of p. In addition to the pressure forces, we are going to see that viscosity-related forces can also act perpendicular to the surfaces and contribute to normal stress.</p>
+                
             <p>In a similar manner, net forces acting in y‐ and z‐directions can be calculated. The total net force vector, due to pressure then is:</p>
             
             <p>formula</p>
