@@ -533,7 +533,7 @@ left: 0%;
 padding-top: 200px;
 padding-left: 40px;
 color: #000000;
-background-color: lightsteelblue;
+/* background-color: lightsteelblue; */
 }
 
 /* .sidebar div {
@@ -547,4 +547,12 @@ display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+}
+
+var.vector {
+  font-style : normal;
+}
+var.vector span {
+  margin-left: -.55em;   /* shift the arrow back over the letter */
+  vertical-align : .2em; /* tune the arrow vertical position */
 }
