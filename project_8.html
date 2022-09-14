@@ -120,7 +120,8 @@
 
             <p>𝑓_𝑠𝑢𝑟𝑓𝑎𝑐𝑒 is expressed through pressure and viscous forces (which we will go into details soon).</p>
 
-            
+            <br>
+            <br>
             
             <p><Strong><font size="5rem"><a id="header8">Navier Stokes Equations</a></font></strong></p>
             
@@ -207,7 +208,7 @@
             <img src="img/viscous5.png" alt="Snow" style="width:30%" class="center">
 
 
-            <p>Therefore, the stress <var class="vector">&sigma;<span>&#8407;</span></var> (<var class="vector">n<span>&#8407;</span></var>) acting at <var class="vector">x<span>&#8407;</span></var>, t on a surface with any arbitrary orientation <var class="vector">n<span>&#8407;</span></var> can be expressed in terms of the nine reference stress components:</p>
+            <p><a id="vis1">Therefore</a>, the stress <var class="vector">&sigma;<span>&#8407;</span></var> (<var class="vector">n<span>&#8407;</span></var>) acting at <var class="vector">x<span>&#8407;</span></var>, t on a surface with any arbitrary orientation <var class="vector">n<span>&#8407;</span></var> can be expressed in terms of the nine reference stress components:</p>
             
             <img src="img/viscous6.png" alt="Snow" style="width:40%" class="center">
             
@@ -215,29 +216,57 @@
             
             <img src="img/viscous7.png" alt="Snow" style="width:50%" class="center">
             
-            
-            
-            
-            
-            
             <p>The rate of angular (or shear) strain in the fluid particle as seen by an observer sitting on it is:</p>
             
-            <p>formula</p>
+            <img src="img/viscous8.png" alt="Snow" style="width:25%" class="center">
             
-            <p>The individual entries of the viscous stress tensor can also be determined with the following formula:</p>
+            <p>The <a id="vis2">Newtonian assumption</a> requires that:</p>
             
-            <p>formula</p>
+            <img src="img/viscous9.png" alt="Snow" style="width:30%" class="center">
             
-            <p>xx , yx and zx represent the x, y, and z components of the stress acting on the surface whose outward normal is oriented in the positive x-direction.</p>
+            <p>&tau;<sub>xx</sub> , &tau;<sub>yx</sub> and &tau;<sub>zx</sub> represent the x, y, and z components of the stress acting on the surface whose outward normal is oriented in the positive x-direction.</p>
             
             <p>Due to the viscosity η, shear forces or shear stresses in x-direction act on the lateral surfaces of the fluid element and on the top and bottom surfaces. In contrast to the normal stresses, which are directed perpendicular to the surface, the shear stresses act parallel to the surface.</p>
             
             <p><Strong><font size="3rem"><a id="header11">Free-Body Diagram</a></font></strong></p>
-                <p>Forces acting on the cross-sectional area of differential element of the fluid (unit: [F/m2] or Pascals):</p>
-                <p>figure</p>
-                <p>formula</p>
+                <img src="img/free_body.png" alt="Snow" style="width:70%" class="center">
+
+                <p>Forces acting on the cross-sectional area of differential element of the fluid (unit: [F/m<sup>2</sup>] or Pascals):</p>
                
+                <img src="img/body1.png" alt="Snow" style="width:55%" class="center">
+
+                <p>Equating the applied forces found in the <a href="project_8.html#header9">pressure gradiant</a> and <a href="project_8.html#vis1">viscosity</a> sections (shown in the above diagram), we get:<br></p>
                
+                <img src="img/body2.png" alt="Snow" style="width:70%" class="center">
+               
+                <p>Simplifying right-hand side:</p>
+                <img src="img/body3.png" alt="Snow" style="width:60%" class="center">
+
+                <p>Dividing both sides by volume:</p>
+                <img src="img/body4.png" alt="Snow" style="width:60%" class="center">
+
+                <p>Re-writing our viscous forces using <a = href="project_8.html#vis2">equation (*)</a>:</p>
+                <img src="img/body5.png" alt="Snow" style="width:60%" class="center">
+    
+                <p>Re-ordering:</p>
+                <img src="img/body6.png" alt="Snow" style="width:65%" class="center">
+                
+                <p>And from the <a href="project_8.html#header8">material derivative expansion</a> we know that the acceleration can be rewritten as follows:</p>
+                <img src="img/body7.png" alt="Snow" style="width:55%" class="center">
+                
+                <p>Factoring out the dynamic viscosity, with the units:</p>
+                <img src="img/body8.png" alt="Snow" style="width:60%" class="center">
+                
+                <p><font size="2rem">**Note: The force density, or force per unit volume, f, is the net force (F) on a region of matter divided by the volume (V) that contains it: f = F/V</font></p>
+               
+                <p>Final form (all directions: x, y, z):</p>
+                <img src="img/body9.png" alt="Snow" style="width:60%" class="center">
+                
+                <p>Dividing by &rho;:</p>
+                <img src="img/body10.png" alt="Snow" style="width:60%" class="center">
+
+               <br>
+               <br>
                
                <p><Strong><font size="5rem"><a id="header12">Helmholtz-Hodge Decomposition Theorem</a></font></strong></p>
                 
