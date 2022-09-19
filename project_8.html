@@ -314,12 +314,26 @@
 
                 <p>The solution at time <em>t + &Delta;t</em> is given by the velocity at the previous timestep.</p>
                 <p>
-                <ol style="float: right; margin-right: 55%;">
-                    <li><strong>Add Force</strong></li>
+                <ol style="float: right; margin-right: 0%;">
+                    <li><strong>Add Force:</strong></li>
+                        <p>Forces are applied at the beginning of each timestep.</p>
+                        <img src="img/force.png" alt="Snow" style="width:60%" class="center">
+                        <br>
+                        <br>
                     <li><strong>Advection/Convection</strong></li>
+                        <p>“A disturbance somewhere in the fluid propagates according to the expression  -(u . ∇)u. Therefore, to obtain the velocity at a point X at the new time t + &Delta;t we backtrace the point X through the velocity field  u<sub>1</sub> over a time &Delta;t. This defines a path p(x, s) corresponding to a partial streamline of the velocity field. The new velocity at the point X is then set to the velocity that the particle, now at X , had at its previous location a -&Delta;t time ago.” </p>
+                        <img src="img/advect.png" alt="Snow" style="width:70%" class="center">
+                        <p><font size="2rem">**Note: Interpolate the old value of P from the old values on the grid, when the start point is out of boundary.</font></p>
+                        
                     <li><strong>Diffusion</strong></li>
+                        <p>AX = B, Jacobi iteration technique. The most straightforward way of solving the diffusion equation is to discretize the diffusion operator  ∇<sup>2</sup> and then use the implicit method.</p>
+                        <img src="img/diffuse.png" alt="Snow" style="width:30%" class="center">
+
                     <li><strong>Projection</strong></li>
+                        <p>Use the poisson equation to get pressure. subtract pressure gradient from the intermediate velocity field u<sup>3</sup>(x) to get the new divergence free velocity vector field.</p>
+                        <img src="img/project.png" alt="Snow" style="width:30%" class="center">
                 </ol> 
+                <p>Link to the GitHub repo can be found <a href="https://github.com/toobarahimnia/Fluid-Simulation.git">here</a>.</p>
                 </p>
 
                 <p></p>
