@@ -280,7 +280,7 @@
                <p>
                   Following is a list of our formulas, written in the format mentioned above. 
                </p>
-               <ul style="float: right; margin-right: 30%;">
+               <ul style="float: right; margin-right: 0%;">
                     <li>∇ &dot; <strong>V</strong> = <sup>∂<strong>v</strong><sub>1</sub></sup>&frasl;<sub>∂x</sub> + <sup>∂<strong>v</strong><sub>2</sub></sup>&frasl;<sub>∂y</sub> + <sup>∂<strong>v</strong><sub>3</sub></sup>&frasl;<sub>∂z</sub></li>
                     
                     <br>
@@ -297,23 +297,23 @@
                     
                     <br>
 
-                    <li>f = a (<sup><strong>u</strong></sup>&frasl;<sub>h</sub>) &mu;</li>
+                    <li><strong>f</strong> = a (<sup><strong>u</strong></sup>&frasl;<sub>h</sub>) &mu;</li>
                     
                     <br>
 
-                    <li>eq6</li>
+                    <li><strong>&tau;<sub>xy</sub></strong> = &mu; <sup>D<strong>&gamma;<sub>xy</sub></strong></sup>&frasl;<sub>Dt</sub> = &mu;(<sup>∂<strong>v<sub>x</sub></strong></sup>&frasl;<sub>∂y</sub> + <sup>∂<strong>v<sub>y</sub></strong></sup>&frasl;<sub>∂x</sub>)</li>
                     
                     <br>
 
-                    <li>eq7</li>
+                    <li><strong>&sigma;<sub>x</sub></strong>(<var class="vector">n<span>&#8407;</span></var>) = <strong>&tau;<sub>xx</sub></strong>n<sub>x</sub> + <strong>&tau;<sub>xy</sub></strong>n<sub>y</sub> + <strong>&tau;<sub>xz</sub></strong>n<sub>z</sub></li>
                     
                     <br>
 
-                    <li>eq8</li>
+                    <li>&rho; dx dy dz g<sub>x</sub> - <sup>∂p</sup>&frasl;<sub>∂x</sub> dx dy dz + <sup>∂&tau;<sub>xx</sub></sup>&frasl;<sub>∂x</sub> dx dy dz + <sup>∂&tau;<sub>yx</sub></sup>&frasl;<sub>∂y</sub> dy dx dz + <sup>∂&tau;<sub>zx</sub></sup>&frasl;<sub>∂z</sub> dz dx dy = m a<sub>x</sub></li>
                     
                     <br>
 
-                    <li>eq9</li>
+                    <li><sup>∂<strong>U</strong></sup>&frasl;<sub>∂t</sub> = proj<sub><strong> U </strong></sub> ( -(<strong>U</strong> &dot; &nabla;)<strong> U </strong> + &nu; &nabla;<sup>2</sup><strong> U </strong> + <strong>F</strong>)</li>
                     </ul>
                <br>
                <br>
@@ -356,6 +356,8 @@
                 
                 <p><font size="2rem">**Note on p (pressure): We can shrink the size of our "container" down to an infinitely small point, and the pressure has a single value at that point. Which means pressure is a scalar quantity, not a vector quantity. It has a magnitude but no direction associated with it. Pressure acts in all directions at a point inside a gas.</font></p>
 
+                <br>
+                
                 <p><Strong><font size="5rem"><a id="header14">Implementation</a></font></strong></p>
                 
                 <p>Given the initial state of the velocity field, u<sub>0</sub> = u(x, 0), we can complete the implementation over the time span &Delta;t in four steps.</p>
