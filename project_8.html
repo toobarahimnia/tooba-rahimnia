@@ -32,13 +32,14 @@
                 <div><a href="project_8.html#header9"><h6>Pressure Gradient</h6></a></div>
                 <div><a href="project_8.html#header10"><h6>Viscosity</h6></a></div>
                 <div><a href="project_8.html#header11"><h6>Free-Body Diagram</h6></a></div>
+                <div><a href="project_8.html#header12"><h6>Naming Convention</h6></a></div>
 
-            <div><a href="project_8.html#header12"><h5>Helmholtz-Hodge Theorm</h5></a></div>
-            <div><a href="project_8.html#header13"><h5>Implementation</h5></a></div>
+            <div><a href="project_8.html#header13"><h5>Helmholtz-Hodge Theorm</h5></a></div>
+            <div><a href="project_8.html#header14"><h5>Implementation</h5></a></div>
                 
 
 
-            <div><a href="project_8.html#header14"><h5>Result</h5></a></div>
+            <div><a href="project_8.html#header15"><h5>Result</h5></a></div>
 
         </div>
         <header>
@@ -268,7 +269,55 @@
                <br>
                <br>
                
-               <p><Strong><font size="5rem"><a id="header12">Helmholtz-Hodge Decomposition Theorem</a></font></strong></p>
+               <p><Strong><font size="3rem"><a id="header12">Naming Convention</a></font></strong></p>
+               <p>In order to consolidate the namings used in our formulas, we  will stricktly follow the rules given below to represent vaariables:</p>
+               <p>
+                   scalar       &rarr; lower-case, italic:       <em>a</em><br>
+                   scalar field &rarr; upper-case:                   A(x, y, z)<br>
+                   vector       &rarr; lower-case, boldface: <strong>a</strong><br>
+                   vector field &rarr; upper-case, boldface: <strong>A</strong>
+               </p>
+               <p>
+                  Following is a list of our formulas, written in the format mentioned above. 
+               </p>
+               <ul style="float: right; margin-right: 30%;">
+                    <li>∇ &dot; <strong>V</strong> = <sup>∂<strong>v</strong><sub>1</sub></sup>&frasl;<sub>∂x</sub> + <sup>∂<strong>v</strong><sub>2</sub></sup>&frasl;<sub>∂y</sub> + <sup>∂<strong>v</strong><sub>3</sub></sup>&frasl;<sub>∂z</sub></li>
+                    
+                    <br>
+                    
+                    <li><sup>D&rho;</sup>&frasl;<sub>Dt</sub> + &rho;∇ &dot; <strong>V</strong> = 0</li>
+                    
+                    <br>
+
+                    <li>&rho;<sup>D<strong>V</strong></sup>&frasl;<sub>Dt</sub> = &rho;g + ∇ &dot; <strong>&tau;</strong><sub>ij</sub> = &rho;g - ∇P + &mu;∇<sup>2</sup><strong>V</strong></li>
+                    
+                    <br>
+
+                    <li><strong>a<sub>x</sub></strong> = <sup>d<strong>u</strong></sup>&frasl;<sub>dt</sub> = <sup>∂<strong>u</strong></sup>&frasl;<sub>∂t</sub> + <sup>∂<strong>u</strong></sup>&frasl;<sub>∂x</sub> u + <sup>∂<strong>u</strong></sup>&frasl;<sub>∂y</sub>v + <sup>∂<strong>u</strong></sup>&frasl;<sub>∂z</sub>w</li>
+                    
+                    <br>
+
+                    <li>f = a (<sup><strong>u</strong></sup>&frasl;<sub>h</sub>) &mu;</li>
+                    
+                    <br>
+
+                    <li>eq6</li>
+                    
+                    <br>
+
+                    <li>eq7</li>
+                    
+                    <br>
+
+                    <li>eq8</li>
+                    
+                    <br>
+
+                    <li>eq9</li>
+                    </ul>
+               <br>
+               <br>
+               <p><Strong><font size="5rem"><a id="header13">Helmholtz-Hodge Decomposition Theorem</a></font></strong></p>
                 
                
                 <p>From Jos Stam's paper we find that N-S equations are perfect for fluid flow simulation. Given velocity and pressure at t=0, we need to use N-S to find their values at t > 0. N-S equations are supplemented with boundary conditions:</p>
@@ -307,7 +356,7 @@
                 
                 <p><font size="2rem">**Note on p (pressure): We can shrink the size of our "container" down to an infinitely small point, and the pressure has a single value at that point. Which means pressure is a scalar quantity, not a vector quantity. It has a magnitude but no direction associated with it. Pressure acts in all directions at a point inside a gas.</font></p>
 
-                <p><Strong><font size="5rem"><a id="header13">Implementation</a></font></strong></p>
+                <p><Strong><font size="5rem"><a id="header14">Implementation</a></font></strong></p>
                 
                 <p>Given the initial state of the velocity field, u<sub>0</sub> = u(x, 0), we can complete the implementation over the time span &Delta;t in four steps.</p>
                 <img src="img/implement.png" alt="Snow" style="width:60%" class="center">
@@ -325,7 +374,7 @@
                         <img src="img/advect.png" alt="Snow" style="width:70%" class="center">
                         <p><font size="2rem">**Note: Interpolate the old value of P from the old values on the grid, when the start point is out of boundary.</font></p>
                         
-                    <li><strong>Diffusion</strong></li>
+                    <li><strong>Diffusion</strong></li>                     
                         <p>AX = B, Jacobi iteration technique. The most straightforward way of solving the diffusion equation is to discretize the diffusion operator  ∇<sup>2</sup> and then use the implicit method.</p>
                         <img src="img/diffuse.png" alt="Snow" style="width:30%" class="center">
 
@@ -333,13 +382,14 @@
                         <p>Use the poisson equation to get pressure. subtract pressure gradient from the intermediate velocity field u<sup>3</sup>(x) to get the new divergence free velocity vector field.</p>
                         <img src="img/project.png" alt="Snow" style="width:30%" class="center">
                 </ol> 
+                </p>
                 <p>Link to the GitHub repo can be found <a href="https://github.com/toobarahimnia/Fluid-Simulation.git" target="_blank">here</a>.</p>
                 </p>
-
-                <p></p>
-                <p></p>
-                <p><Strong><font size="5rem"><a id="header14">Result</a></font></strong></p>
+                
+                <p><Strong><font size="5rem"><a id="header15">Result</a></font></strong></p>
                 <p>TODO</p>
+                <p></p>
+                <p></p>
         </div>
         
         
